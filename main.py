@@ -132,10 +132,6 @@ class MainWidget(RelativeLayout):
         base_y = self.SHIP_BASE_Y * self.height
         ship_half_width = self.SHIP_WIDTH * self.width / 2
         ship_height = self.SHIP_HEIGHT * self.height
-        # ....
-        #    2
-        #  1   3
-        # self.transform
         self.ship_coordinates[0] = (center_x-ship_half_width, base_y)
         self.ship_coordinates[1] = (center_x, base_y + ship_height)
         self.ship_coordinates[2] = (center_x + ship_half_width, base_y)
@@ -189,8 +185,6 @@ class MainWidget(RelativeLayout):
             last_x = last_coordinates[0]
             last_y = last_coordinates[1] + 1
 
-        print("foo1")
-
         for i in range(len(self.tiles_coordinates), self.NB_TILES):
             r = random.randint(0, 2)
             # 0 -> straight
@@ -216,8 +210,6 @@ class MainWidget(RelativeLayout):
                 self.tiles_coordinates.append((last_x, last_y))
 
             last_y += 1
-
-        print("foo2")
 
     def init_vertical_lines(self):
         with self.canvas:
